@@ -1,0 +1,24 @@
+name: build
+
+on:
+  push:
+    branches:
+      - work
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Upload static site artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: site
+          path: |
+            index.html
+            styles.css
+            assets/
