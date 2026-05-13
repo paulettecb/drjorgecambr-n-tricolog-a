@@ -166,7 +166,13 @@
       });
 
       const observer = new IntersectionObserver(
-        (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('show')),
+        (entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        }),
         { threshold: 0.15 }
       );
       document.querySelectorAll('.animated-letters').forEach((heading) => {
@@ -184,8 +190,10 @@
       const letterObserver = new IntersectionObserver(
         (entries) => entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('play');
-            letterObserver.unobserve(entry.target);
+            entry.target.classList.remove('play');
+            requestAnimationFrame(() => entry.target.classList.add('play'));
+          } else {
+            entry.target.classList.remove('play');
           }
         }),
         { threshold: 0.35 }
