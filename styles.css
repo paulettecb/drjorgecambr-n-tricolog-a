@@ -163,3 +163,58 @@ h1 { font-size: clamp(2.25rem, 5vw, 4.5rem); margin-bottom: 0.8rem; font-family:
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
+
+/* Tailwind-inspired H3 component */
+.neumo-h3 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+  color: #334155;
+  transition: color 300ms ease, text-shadow 300ms ease;
+}
+
+.neumo-h3:hover {
+  color: var(--accent);
+  text-shadow: 0 4px 14px rgb(108 99 255 / 0.22);
+}
+
+.animated-letters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.01em;
+}
+
+.animated-letters .letter {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(8px);
+  will-change: transform, opacity, filter;
+}
+
+.animated-letters.play .letter {
+  animation: letterLiftIn 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--char-index) * 38ms);
+}
+
+@keyframes letterLiftIn {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.97);
+    filter: blur(8px);
+  }
+  55% {
+    opacity: 0.75;
+    transform: translateY(-4px) scale(1.02);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .neumo-h3 { font-size: clamp(1.1rem, 6vw, 1.5rem); }
+}
