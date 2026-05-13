@@ -1,12 +1,12 @@
 :root {
-  --bg: #e0e5ec;
-  --text: #3d4852;
-  --muted: #6b7280;
-  --accent: #6c63ff;
-  --accent-light: #8b84ff;
-  --accent-secondary: #38b2ac;
-  --shadow-dark: rgb(163 177 198 / 0.65);
-  --shadow-light: rgb(255 255 255 / 0.56);
+  --bg: #bdc4d4;
+  --text: #0f1a2b;
+  --muted: #52677d;
+  --accent: #1c2e4a;
+  --accent-light: #52677d;
+  --accent-secondary: #c8a44f;
+  --shadow-dark: rgb(28 46 74 / 0.32);
+  --shadow-light: rgb(255 255 255 / 0.62);
   --radius-lg: 32px;
   --radius-md: 16px;
   --container: min(1120px, 92vw);
@@ -59,7 +59,7 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgb(224 229 236 / 0.88);
+  background: rgb(189 196 212 / 0.9);
   backdrop-filter: blur(10px);
 }
 
@@ -91,6 +91,8 @@ a { color: inherit; }
 .menu-toggle span { display: block; width: 22px; height: 2px; margin: 4px 0; background: currentColor; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
+.hero { background: linear-gradient(180deg, #bdc4d4 0%, #d1cfc9 100%); }
+#servicios { background: #d1cfc9; }
 .hero-grid,.two-col,.locations-grid { display: grid; gap: 1.2rem; }
 .hero-grid { grid-template-columns: 1.08fr 0.92fr; align-items: center; }
 .kicker { text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-secondary); font-weight: 700; }
@@ -112,9 +114,9 @@ h1 { font-size: clamp(2.25rem, 5vw, 4.5rem); margin-bottom: 0.8rem; font-family:
 }
 
 .cta {
-  color: #f8f9ff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  box-shadow: 9px 9px 16px rgb(108 99 255 / 0.35), -9px -9px 16px rgb(255 255 255 / 0.55);
+  color: #f4f1e8;
+  background: linear-gradient(135deg, #0f1a2b, #1c2e4a);
+  box-shadow: 9px 9px 16px rgb(15 26 43 / 0.45), -9px -9px 16px rgb(255 255 255 / 0.24);
 }
 .ghost { color: var(--text); background: var(--bg); box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light); }
 
@@ -124,9 +126,9 @@ h1 { font-size: clamp(2.25rem, 5vw, 4.5rem); margin-bottom: 0.8rem; font-family:
 .services-grid { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
 .card,.focus-box,.verify-box,.location-card { padding: clamp(1.2rem, 2.5vw, 2.2rem); border-radius: var(--radius-lg); }
 .two-col { grid-template-columns: 1fr 1fr; align-items: start; }
-.badge { display: inline-block; margin-top: 0.5rem; border-radius: 999px; padding: 0.5rem 0.9rem; font-weight: 700; background: var(--bg); box-shadow: inset 3px 3px 6px rgb(163 177 198 / 0.6), inset -3px -3px 6px rgb(255 255 255 / 0.5); }
+.badge { display: inline-block; margin-top: 0.5rem; border-radius: 999px; padding: 0.5rem 0.9rem; font-weight: 700; background: linear-gradient(145deg, #d7b25a, #c39a3f); color: #0f1a2b; box-shadow: inset 3px 3px 6px rgb(255 241 199 / 0.35), 5px 5px 10px rgb(28 46 74 / 0.25); }
 .verify-box ul { margin: 0; padding-left: 1.1rem; }
-.verify-box a,.location-card a { color: var(--accent); text-underline-offset: 0.2rem; }
+.verify-box a,.location-card a { color: #8a6a21; font-weight: 700; text-underline-offset: 0.2rem; }
 
 .gallery-grid { margin-top: 1rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0.9rem; }
 .gallery-item { text-decoration: none; min-height: 120px; display: grid; place-items: center; text-align: center; color: var(--muted); font-weight: 700; padding: 0.8rem; border-radius: 16px; }
@@ -137,8 +139,8 @@ h1 { font-size: clamp(2.25rem, 5vw, 4.5rem); margin-bottom: 0.8rem; font-family:
 
 .contact-bar { position: fixed; z-index: 40; left: 50%; bottom: 0.8rem; transform: translateX(-50%); width: min(94vw, 460px); display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
 .contact-pill { text-align: center; font-weight: 800; min-height: 48px; display: grid; place-items: center; }
-.contact-pill.whatsapp { color: #1f3e2a; background: var(--bg); box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light); }
-.contact-pill.maps { color: #2d3a4b; background: var(--bg); box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light); }
+.contact-pill.whatsapp { color: #0f1a2b; background: var(--bg); box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light); }
+.contact-pill.maps { color: #0f1a2b; background: var(--bg); box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light); }
 
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.show { opacity: 1; transform: translateY(0); }
