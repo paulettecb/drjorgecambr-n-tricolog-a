@@ -65,15 +65,15 @@
           <p class="section-intro">Atención para hombres y mujeres con enfoque médico, estético y seguimiento clínico.</p>
           <div class="services-grid">
             <article class="card neumorph">
-              <h3>Injerto Capilar (Técnica FUE)</h3>
+              <h3 class="neumo-h3 animated-letters">Injerto Capilar (Técnica FUE)</h3>
               <p>Restauración folicular de alta densidad con resultados naturales y permanentes. Sin cicatrices lineales.</p>
             </article>
             <article class="card neumorph">
-              <h3>Diseño de Barba y Ceja</h3>
+              <h3 class="neumo-h3 animated-letters">Diseño de Barba y Ceja</h3>
               <p>Densidad y forma definidas para enmarcar tu rostro, utilizando tecnología de precisión médica.</p>
             </article>
             <article class="card neumorph">
-              <h3>Tricología Médica (Salud del Cuero Cabelludo)</h3>
+              <h3 class="neumo-h3 animated-letters">Tricología Médica (Salud del Cuero Cabelludo)</h3>
               <p>Diagnóstico clínico para mujeres y hombres. Tratamos alopecia, caspa persistente y sensibilidad capilar desde la raíz.</p>
             </article>
           </div>
@@ -99,7 +99,7 @@
             <p class="badge">Cédula Profesional 13107981</p>
           </article>
           <aside id="verificacion" class="neumorph verify-box">
-            <h3>Verificación y redes</h3>
+            <h3 class="neumo-h3 animated-letters">Verificación y redes</h3>
             <ul>
               <li><a href="https://www.mend.com.mx/doctores/dr-jorge-cambron-barrales" target="_blank" rel="noopener noreferrer">Perfil profesional en Mend</a></li>
               <li><a href="https://buholegal.com/13107981/" target="_blank" rel="noopener noreferrer">Cédula 13107981 (BúhoLegal)</a></li>
@@ -130,12 +130,12 @@
         <h2>Ubicaciones reales</h2>
         <div class="locations-grid">
           <article class="neumorph location-card">
-            <h3>Victoria Medical Center, Morelia</h3>
+            <h3 class="neumo-h3 animated-letters">Victoria Medical Center, Morelia</h3>
             <p>Av. Acueducto 2800, Lomas de Hidalgo, 58240 Morelia, Michoacán.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Victoria+Medical+Center+Av.+Acueducto+2800+Morelia" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
           </article>
           <article class="neumorph location-card">
-            <h3>Hospital Real San José, Guadalajara</h3>
+            <h3 class="neumo-h3 animated-letters">Hospital Real San José, Guadalajara</h3>
             <p>Sede alterna reportada en perfiles médicos del doctor.</p>
             <a href="https://www.google.com/maps/search/?api=1&query=Hospital+Real+San+Jose+Guadalajara" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
           </article>
@@ -169,6 +169,29 @@
         (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('show')),
         { threshold: 0.15 }
       );
+      document.querySelectorAll('.animated-letters').forEach((heading) => {
+        const text = heading.textContent;
+        heading.textContent = '';
+        [...text].forEach((char, i) => {
+          const span = document.createElement('span');
+          span.className = 'letter';
+          span.style.setProperty('--char-index', i);
+          span.textContent = char === ' ' ? '\u00A0' : char;
+          heading.appendChild(span);
+        });
+      });
+
+      const letterObserver = new IntersectionObserver(
+        (entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('play');
+            letterObserver.unobserve(entry.target);
+          }
+        }),
+        { threshold: 0.35 }
+      );
+      document.querySelectorAll('.animated-letters').forEach((el) => letterObserver.observe(el));
+
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
