@@ -1,0 +1,145 @@
+/* =========================================================
+   TOKENS — Tricología Cambrón Design System
+   Fuente: claude.ai/design · proyecto "Tricología Cambrón — Design System"
+   (tokens/colors.css + typography.css + radius.css + shadows.css + motion.css)
+   ========================================================= */
+
+/* =========================================================
+   COLOR — Marino (navy) + Dorado (gold) sobre neutros cálidos.
+   Cálida, elegante y médica. Sin verde, sin terracota.
+   Un único color de ACCIÓN (marino); el dorado se dosifica y
+   NUNCA rellena botones. Contrastes verificados WCAG AA.
+   ========================================================= */
+:root {
+  /* ---------- Brand: marino (único color de acción) ---------- */
+  --navy:        #1F4E6B;  /* principal · CTA · enlaces · estructura (blanco encima 8.9:1) */
+  --navy-hover:  #184056;  /* hover del botón primario · texto sobre tintes */
+  --navy-deep:   #17273A;  /* pressed · titulares de alto énfasis */
+  --navy-tint:   #E5EDF2;  /* rellenos suaves · chips · estados activos */
+  --navy-tint-2: #CFDDE7;  /* tinte más fuerte · bordes sobre tinte */
+
+  /* ---------- Accent: dorado — SOLO acento, nunca en botones ---------- */
+  --gold:      #C89331;  /* subrayados · íconos · líneas · detalles sobre marino */
+  --gold-deep: #8A6A1F;  /* dorado COMO TEXTO sobre fondo claro (5.0:1 sobre blanco) */
+  --gold-tint: #F5EBD3;  /* fondo de chips/badges dorados */
+
+  /* ---------- Neutros cálidos ---------- */
+  --cream:       #FBFAF8;  /* fondo de página (off-white cálido) */
+  --paper:       #FFFFFF;  /* tarjetas limpias — aportan la sensación clínica */
+  --sand:        #F0E7DB;  /* superficie alterna cálida */
+  --sand-2:      #E7DAC8;  /* arena más fuerte · hover sobre arena */
+  --line:        #E6DFD4;  /* bordes · divisores */
+  --line-strong: #D8CDBB;  /* divisores más fuertes */
+
+  /* ---------- Ink (texto) ---------- */
+  --ink:      #17273A;  /* texto principal (14.5:1 sobre papel) */
+  --ink-soft: #5C6672;  /* texto secundario (5.6:1 sobre papel) */
+  --ink-mute: #8A929B;  /* terciario · placeholder · disabled (grande/UI) */
+
+  /* ---------- Semánticos ---------- */
+  --success:      #2A5E86;
+  --success-tint: #E3EBF2;
+  --warning:      #B7791F;
+  --warning-tint: #F7ECD6;
+  --danger:       #B0402E;
+  --danger-tint:  #F7E4DF;
+
+  /* ---------- Aliases semánticos ---------- */
+  --bg-page:            var(--cream);
+  --surface:            var(--paper);
+  --surface-alt:        var(--sand);
+  --surface-brand-soft: var(--navy-tint);
+
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-soft);
+  --text-muted:     var(--ink-mute);
+  --text-on-brand:  #FFFFFF;
+  --text-brand:     var(--navy);
+
+  --border:        var(--line);
+  --border-strong: var(--line-strong);
+
+  --brand:         var(--navy);
+  --brand-hover:   var(--navy-hover);
+  --brand-active:  var(--navy-deep);
+
+  --accent:      var(--gold);
+  --accent-ink:  var(--gold-deep);
+  --accent-tint: var(--gold-tint);
+
+  --link:       var(--navy);
+  --link-hover: var(--navy-hover);
+
+  --focus-ring: rgba(31, 78, 107, 0.32);
+}
+
+/* =========================================================
+   TYPOGRAPHY — Display: Bricolage Grotesque · Text/UI/Data: Inter
+   Escala fluida (móvil -> escritorio) vía clamp().
+   ========================================================= */
+:root {
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-text:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data:    "Inter", system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-display: 800;
+
+  --fs-hero:    clamp(2.75rem, 1.55rem + 5vw, 4.5rem);
+  --fs-h1:      clamp(2.15rem, 1.55rem + 2.6vw, 3.25rem);
+  --fs-h2:      clamp(1.7rem, 1.35rem + 1.6vw, 2.35rem);
+  --fs-h3:      clamp(1.35rem, 1.2rem + 0.7vw, 1.625rem);
+  --fs-h4:      1.25rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body:    1rem;
+  --fs-sm:      0.875rem;
+  --fs-caption: 0.8125rem;
+
+  --lh-tight:   1.08;
+  --lh-heading: 1.18;
+  --lh-snug:    1.3;
+  --lh-body:    1.6;
+
+  --ls-display: -0.02em;
+  --ls-tight:   -0.01em;
+  --ls-normal:  0;
+  --ls-eyebrow: 0.14em;
+}
+
+/* =========================================================
+   RADIUS — esquinas suaves y orgánicas.
+   ========================================================= */
+:root {
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 999px;
+}
+
+/* =========================================================
+   SHADOWS — sutiles y funcionales (base marino-ink, nunca negro duro).
+   ========================================================= */
+:root {
+  --shadow-xs: 0 1px 2px rgba(23, 39, 58, 0.06);
+  --shadow-sm: 0 1px 3px rgba(23, 39, 58, 0.08), 0 1px 2px rgba(23, 39, 58, 0.04);
+  --shadow-md: 0 6px 16px rgba(23, 39, 58, 0.09), 0 2px 4px rgba(23, 39, 58, 0.05);
+  --shadow-lg: 0 16px 40px rgba(23, 39, 58, 0.14), 0 4px 10px rgba(23, 39, 58, 0.06);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+}
+
+/* =========================================================
+   MOTION — calmado y cálido. Fades y eases suaves; sin rebotes duros.
+   ========================================================= */
+:root {
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft:   cubic-bezier(0.34, 1.2, 0.64, 1);
+}

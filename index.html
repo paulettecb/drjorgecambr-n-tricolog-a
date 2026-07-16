@@ -5,198 +5,406 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Clínica de tricología premium en Morelia: diagnóstico capilar digital, injerto FUE y seguimiento médico personalizado con el Dr. Jorge Cambrón Barrales."
+      content="Clínica de tricología en Morelia: diagnóstico del cuero cabelludo con tricoscopia y un plan de tratamiento a tu medida, dirigido por el Dr. Jorge Cambrón Barrales."
     />
-    <title>Dr. Jorge Cambrón Barrales | Clínica Capilar Premium</title>
-    <link rel="icon" type="image/png" href="logodr.png" />
+    <title>Dr. Jorge Cambrón | Tricología · Morelia</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+    <meta property="og:title" content="Dr. Jorge Cambrón | Tricología · Morelia" />
+    <meta property="og:description" content="La ciencia de recuperar tu cabello. Diagnóstico con tricoscopia y plan de tratamiento a tu medida." />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/landing.css" />
+    <script src="assets/js/hero-canvas.js" defer></script>
+    <script src="assets/js/landing.js" defer></script>
   </head>
   <body>
-    <header class="site-header" id="inicio">
-      <div class="container nav-wrap">
-        <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <img src="logodr.png" alt="Logo Dr. Jorge Cambrón" width="190" height="54" />
+    <!-- ===== Hero (canvas orbe folicular + header) ===== -->
+    <div class="lp-hero-wrap">
+      <canvas
+        class="lp-hero-canvas"
+        data-variant="orbe"
+        data-strands="164"
+        data-speed="0.4"
+        data-interactive="true"
+        aria-hidden="true"
+      ></canvas>
+
+      <header class="lp-header">
+        <a class="lp-brand" href="#" aria-label="Dr. Cambrón — inicio">
+          <svg width="38" height="38" viewBox="12 8 68 68" fill="none" aria-hidden="true">
+            <path d="M28 53c0-13 8-22 18-22s18 9 18 22c0 10-8 19-18 19s-18-9-18-19z" stroke="var(--navy)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M46 17c-8 3-11 11-11 11" stroke="var(--navy)" stroke-width="4.5" stroke-linecap="round"></path>
+            <path d="M57 20c-5 3-7 9-7 9" stroke="var(--navy)" stroke-width="4.5" stroke-linecap="round"></path>
+            <path d="M20 36h52" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"></path>
+          </svg>
+          <span class="lp-brand-text">
+            <span class="lp-brand-name">Dr. Cambrón</span>
+            <span class="lp-brand-sub">TRICOLOGÍA · MORELIA</span>
+          </span>
         </a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
-          <span></span><span></span><span></span>
-          <span class="sr-only">Abrir menú</span>
-        </button>
-        <nav id="menu-principal" class="menu" aria-label="Navegación principal">
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#resultados">Resultados</a>
-          <a href="#doctor">Doctor</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contacto">Contacto</a>
+        <nav class="lp-nav" aria-label="Navegación principal">
+          <a class="lp-nav-link" href="#metodo">Método</a>
+          <a class="lp-nav-link" href="#tratamientos">Tratamientos</a>
+          <a class="lp-nav-link" href="#faq">Preguntas</a>
+          <a class="tc-btn tc-btn--secondary tc-btn--sm" href="#agenda"><span>Agenda</span></a>
         </nav>
-      </div>
-    </header>
+      </header>
+
+      <section class="lp-hero" aria-labelledby="hero-title">
+        <div class="lp-hero-inner">
+          <div class="lp-eyebrow lp-fade">
+            <span class="lp-eyebrow-dash"></span>
+            <span class="lp-eyebrow-text">CLÍNICA DE TRICOLOGÍA · MORELIA</span>
+          </div>
+          <h1 id="hero-title" class="lp-hero-title lp-fade lp-fade--1">
+            La <span class="lp-hl">ciencia</span> de recuperar tu cabello.
+          </h1>
+          <p class="lp-hero-sub lp-fade lp-fade--2">
+            Diagnóstico del cuero cabelludo con tricoscopia y un plan de tratamiento a tu medida, dirigido por el Dr. Jorge Cambrón.
+          </p>
+          <div class="lp-hero-actions lp-fade lp-fade--3">
+            <a class="tc-btn tc-btn--primary tc-btn--lg" href="#agenda"><span>Agenda tu valoración</span></a>
+            <a class="tc-btn tc-btn--ghost tc-btn--lg" href="#agenda"><span>Hacer mi evaluación · 2 min</span></a>
+          </div>
+          <p class="lp-hero-note lp-fade lp-fade--4">Agenda 24/7 · Respuesta el mismo día · Sin compromiso</p>
+        </div>
+      </section>
+    </div>
 
     <main>
-      <section class="hero section" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Tricología avanzada • Morelia y Guadalajara</p>
-            <h1 id="hero-title">Transformación capilar premium respaldada por diagnóstico médico real.</h1>
-            <p class="subtitle">
-              Convertimos casos complejos de alopecia en planes clínicos claros: diagnóstico digital, tratamiento personalizado y seguimiento por etapas.
-            </p>
-            <div class="hero-actions">
-              <a class="cta" href="https://wa.me/524430000000?text=Hola%20Dr.%20Jorge%20Cambr%C3%B3n,%20quiero%20agendar%20una%20valoraci%C3%B3n%20capilar%20premium." target="_blank" rel="noopener noreferrer">Agendar valoración premium</a>
-              <a class="ghost" href="#proceso">Conocer metodología</a>
+      <!-- ===== Método ===== -->
+      <section id="metodo" class="lp-section lp-section--metodo" aria-labelledby="metodo-title">
+        <div class="lp-panel">
+          <div class="lp-kicker">
+            <span class="lp-eyebrow-dash"></span>
+            <span class="lp-eyebrow-text">NUESTRO MÉTODO</span>
+          </div>
+          <h2 id="metodo-title" class="lp-h2 lp-h2--tight">Tratamos la causa de raíz.</h2>
+          <p class="lp-intro">
+            La medicina funcional busca el <em>porqué</em> de la caída — hábitos, hormonas, nutrición — y construye un plan que funciona para tu caso.
+          </p>
+          <div class="lp-steps">
+            <article class="lp-card">
+              <div class="lp-card-top">
+                <span class="lp-card-ic">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+                </span>
+                <span class="lp-card-num">01</span>
+              </div>
+              <h3>Evaluación integral</h3>
+              <p>Historia clínica, hábitos y estilo de vida para entender tu caso completo.</p>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-top">
+                <span class="lp-card-ic">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+                </span>
+                <span class="lp-card-num">02</span>
+              </div>
+              <h3>Tricoscopia y laboratorios</h3>
+              <p>Revisamos el cuero cabelludo con imagen digital y los marcadores que afectan tu cabello.</p>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-top">
+                <span class="lp-card-ic">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </span>
+                <span class="lp-card-num">03</span>
+              </div>
+              <h3>Plan personalizado</h3>
+              <p>Un protocolo a tu medida que trata la causa de raíz, con metas claras.</p>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-top">
+                <span class="lp-card-ic">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                </span>
+                <span class="lp-card-num">04</span>
+              </div>
+              <h3>Seguimiento medible</h3>
+              <p>Medimos tu avance con densidad y Hair Score, en fechas acordadas contigo.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Tratamientos ===== -->
+      <section id="tratamientos" class="lp-section lp-section--tratamientos" aria-labelledby="tratamientos-title">
+        <div class="lp-kicker">
+          <span class="lp-eyebrow-dash"></span>
+          <span class="lp-eyebrow-text">TRATAMIENTOS</span>
+        </div>
+        <h2 id="tratamientos-title" class="lp-h2">Qué atendemos.</h2>
+        <div class="lp-treatments">
+          <article class="lp-card lp-card--treatment">
+            <span class="lp-card-ic">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+            </span>
+            <h3>Caída hereditaria</h3>
+            <p>Alopecia androgenética en hombres y mujeres: frenamos la progresión y recuperamos densidad con protocolos con evidencia.</p>
+          </article>
+          <article class="lp-card lp-card--treatment">
+            <span class="lp-card-ic">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+            </span>
+            <h3>Caída reactiva</h3>
+            <p>Por estrés, cambios hormonales o deficiencias: encontramos el detonante con laboratorios y lo corregimos desde el origen.</p>
+          </article>
+          <article class="lp-card lp-card--treatment">
+            <span class="lp-card-ic">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </span>
+            <h3>Cuero cabelludo</h3>
+            <p>Caspa, dermatitis y foliculitis: tratamos la inflamación para que el cabello crezca en un terreno sano.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== Resultados ===== -->
+      <section id="resultados" class="lp-section" aria-labelledby="resultados-title">
+        <div class="lp-kicker">
+          <span class="lp-eyebrow-dash"></span>
+          <span class="lp-eyebrow-text">RESULTADOS</span>
+        </div>
+        <h2 id="resultados-title" class="lp-h2">Documentación clínica de casos reales.</h2>
+        <div class="lp-ba-grid">
+          <div class="tc-ba">
+            <div class="tc-ba__pair">
+              <div class="tc-ba__cell">
+                <div class="tc-ba__ph">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                  <small>Foto real del paciente — antes</small>
+                </div>
+                <span class="tc-ba__tag">Antes</span>
+              </div>
+              <div class="tc-ba__cell">
+                <div class="tc-ba__ph">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                  <small>Foto real del paciente — después</small>
+                </div>
+                <span class="tc-ba__tag">Después</span>
+              </div>
             </div>
-            <div class="hero-metrics">
-              <article><strong>+12 años</strong><span>Experiencia clínica</span></article>
-              <article><strong>1:1</strong><span>Atención personalizada</span></article>
-              <article><strong>360°</strong><span>Plan diagnóstico integral</span></article>
+            <div class="tc-ba__cap"><span>Mes 0 → Mes 6 · [tratamiento]</span></div>
+          </div>
+          <div class="tc-ba">
+            <div class="tc-ba__pair">
+              <div class="tc-ba__cell">
+                <div class="tc-ba__ph">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                  <small>Foto real del paciente — antes</small>
+                </div>
+                <span class="tc-ba__tag">Antes</span>
+              </div>
+              <div class="tc-ba__cell">
+                <div class="tc-ba__ph">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                  <small>Foto real del paciente — después</small>
+                </div>
+                <span class="tc-ba__tag">Después</span>
+              </div>
+            </div>
+            <div class="tc-ba__cap"><span>Mes 0 → Mes 8 · [tratamiento]</span></div>
+          </div>
+        </div>
+        <div class="tc-callout tc-callout--info" role="note">
+          <span class="tc-callout__ic" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </span>
+          <div class="tc-callout__body">
+            <div class="tc-callout__text">Los resultados varían según cada persona. Las imágenes son documentación clínica de pacientes reales de la consulta.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Doctor ===== -->
+      <section id="doctor" class="lp-section" aria-labelledby="doctor-title">
+        <div class="lp-panel lp-doctor-grid">
+          <div class="lp-doctor-photo-col">
+            <div class="lp-doctor-photo">
+              <img src="assets/doctor/dr-jorge-cambron.jpg" alt="Dr. Jorge Cambrón Barrales, especialista en tricología integral" loading="lazy" decoding="async" />
             </div>
           </div>
+          <div class="lp-doctor-copy">
+            <div class="lp-kicker">
+              <span class="lp-eyebrow-dash"></span>
+              <span class="lp-eyebrow-text">TU MÉDICO</span>
+            </div>
+            <h2 id="doctor-title" class="lp-h2">Dr. Jorge Cambrón Barrales</h2>
+            <p>
+              Médico con especialidad en tricología integral. Trabaja desde la medicina funcional: entender el <em>porqué</em> de tu caída para tratarla desde el origen, con un plan realista y medible.
+            </p>
+            <div class="lp-chip-row">
+              <span class="tc-chip">Medicina funcional</span>
+              <span class="tc-chip">Tricoscopia digital</span>
+              <span class="tc-chip">Consulta presencial y a distancia</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <figure class="doctor-photo reveal">
-            <img src="DB4BB768-92C2-4035-B239-004390D8603B.png" alt="Dr. Jorge Cambrón Barrales" loading="eager" decoding="async" />
-            <figcaption>Dirección médica por el Dr. Jorge Cambrón Barrales · Cédula 13107981</figcaption>
+      <!-- ===== Testimonios ===== -->
+      <section id="testimonios" class="lp-section" aria-labelledby="testimonios-title">
+        <div class="lp-kicker">
+          <span class="lp-eyebrow-dash"></span>
+          <span class="lp-eyebrow-text">PACIENTES</span>
+        </div>
+        <h2 id="testimonios-title" class="lp-h2">Lo que dicen de su proceso.</h2>
+        <div class="lp-quotes">
+          <figure class="tc-quote">
+            <div class="tc-quote__mark" aria-hidden="true">&ldquo;</div>
+            <div class="tc-quote__stars" role="img" aria-label="5 de 5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote class="tc-quote__text">Pega aquí la reseña textual de un paciente real — cópiala de Google o WhatsApp con su permiso.</blockquote>
+            <figcaption class="tc-quote__foot">
+              <span class="tc-quote__avatar" aria-hidden="true">ND</span>
+              <span class="tc-quote__who">
+                <span class="tc-quote__name">
+                  Nombre del paciente
+                  <span class="tc-quote__verified" title="Paciente verificado" role="img" aria-label="Paciente verificado">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                  </span>
+                </span>
+                <span class="tc-quote__detail">Tratamiento · tiempo en plan</span>
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="tc-quote">
+            <div class="tc-quote__mark" aria-hidden="true">&ldquo;</div>
+            <div class="tc-quote__stars" role="img" aria-label="5 de 5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--warning)" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote class="tc-quote__text">Pega aquí una segunda reseña real. Las reseñas verificables convierten mejor que cualquier texto de marketing.</blockquote>
+            <figcaption class="tc-quote__foot">
+              <span class="tc-quote__avatar" aria-hidden="true">ND</span>
+              <span class="tc-quote__who">
+                <span class="tc-quote__name">
+                  Nombre del paciente
+                  <span class="tc-quote__verified" title="Paciente verificado" role="img" aria-label="Paciente verificado">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                  </span>
+                </span>
+                <span class="tc-quote__detail">Tratamiento · tiempo en plan</span>
+              </span>
+            </figcaption>
           </figure>
         </div>
       </section>
 
-      <section id="servicios" class="section reveal" aria-labelledby="servicios-title">
-        <div class="container">
-          <h2 id="servicios-title">Capacidades de un sitio clínico premium</h2>
-          <p class="section-intro">Este sitio ahora comunica propuesta de valor, proceso y conversión, no solo "presencia".</p>
-          <div class="services-grid">
-            <article class="card">
-              <h3>Embudo de conversión médico</h3>
-              <p>CTAs estratégicos, secciones por intención de paciente y contacto inmediato por WhatsApp para reducir fricción de agenda.</p>
-            </article>
-            <article class="card">
-              <h3>Arquitectura de confianza</h3>
-              <p>Credenciales visibles, metodología clínica en pasos y evidencia social para elevar percepción profesional.</p>
-            </article>
-            <article class="card">
-              <h3>Contenido escalable</h3>
-              <p>Estructura lista para integrar casos, reseñas, antes/después y recursos educativos sin rehacer diseño.</p>
-            </article>
-            <article class="card">
-              <h3>UX orientada a móviles</h3>
-              <p>Interfaz responsiva, navegación simplificada y barra flotante de contacto para captación desde redes sociales.</p>
-            </article>
+      <!-- ===== FAQ ===== -->
+      <section id="faq" class="lp-section lp-section--faq" aria-labelledby="faq-title">
+        <div class="lp-kicker">
+          <span class="lp-eyebrow-dash"></span>
+          <span class="lp-eyebrow-text">PREGUNTAS FRECUENTES</span>
+        </div>
+        <h2 id="faq-title" class="lp-h2 lp-h2--faq">Antes de agendar.</h2>
+        <details class="lp-faq">
+          <summary>¿Qué incluye la primera consulta?</summary>
+          <p>Historia clínica completa, tricoscopia del cuero cabelludo y una explicación clara de tu diagnóstico con el plan sugerido. Sales sabiendo qué tienes y qué sigue.</p>
+        </details>
+        <details class="lp-faq">
+          <summary>¿Atienden a hombres y mujeres?</summary>
+          <p>Sí. La caída tiene causas distintas en cada caso y el plan se construye a tu medida, seas hombre o mujer.</p>
+        </details>
+        <details class="lp-faq">
+          <summary>¿Cuándo empiezo a ver resultados?</summary>
+          <p>El ciclo del cabello es lento: la mayoría de los planes se evalúa entre el mes 3 y el 6, con seguimiento fotográfico y de densidad para medir el avance real.</p>
+        </details>
+        <details class="lp-faq">
+          <summary>¿Puedo tomar la consulta a distancia?</summary>
+          <p>Sí, hay valoración en línea para empezar tu proceso; algunos estudios y seguimientos se coordinan de forma presencial en Morelia.</p>
+        </details>
+      </section>
+
+      <!-- ===== Agenda ===== -->
+      <section id="agenda" class="lp-section" aria-labelledby="agenda-title">
+        <div class="lp-panel lp-panel--navy lp-agenda-grid">
+          <div class="lp-agenda-copy">
+            <div class="lp-kicker">
+              <span class="lp-eyebrow-dash"></span>
+              <span class="lp-eyebrow-text">AGENDA</span>
+            </div>
+            <h2 id="agenda-title" class="lp-h2">Da el primer paso hoy.</h2>
+            <p>Déjanos tus datos y te contactamos el mismo día para agendar tu valoración.</p>
+            <div class="lp-agenda-facts">
+              <div class="lp-agenda-fact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Morelia, Michoacán</span>
+              </div>
+              <div class="lp-agenda-fact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                <span>WhatsApp directo · respuesta el mismo día</span>
+              </div>
+              <div class="lp-agenda-fact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Tus datos de salud están protegidos (LFPDPPP)</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section id="proceso" class="section reveal" aria-labelledby="proceso-title">
-        <div class="container">
-          <h2 id="proceso-title">Metodología clínica en 4 fases</h2>
-          <div class="timeline">
-            <article><span>01</span><h3>Valoración y tricodiagnóstico</h3><p>Historia clínica, fotografía diagnóstica y análisis del cuero cabelludo.</p></article>
-            <article><span>02</span><h3>Plan de tratamiento</h3><p>Ruta personalizada: farmacológico, bioestimulación o protocolo quirúrgico FUE.</p></article>
-            <article><span>03</span><h3>Intervención especializada</h3><p>Ejecución por equipo médico con estándares de bioseguridad y precisión estética.</p></article>
-            <article><span>04</span><h3>Seguimiento y optimización</h3><p>Control por etapas para consolidar resultados y mantenimiento a largo plazo.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="resultados" class="section reveal" aria-labelledby="resultados-title">
-        <div class="container split">
-          <article>
-            <h2 id="resultados-title">Resultados que se explican, no solo se muestran</h2>
-            <p>Cada paciente recibe metas por etapa y comunicación clara de tiempos de evolución para tomar decisiones informadas.</p>
-            <ul class="checklist">
-              <li>Indicadores clínicos por seguimiento.</li>
-              <li>Plan de cuidados post procedimiento.</li>
-              <li>Monitoreo de evolución fotográfica.</li>
-            </ul>
-          </article>
-          <aside class="highlight-box">
-            <h3>¿Qué justifica un sitio de mayor valor?</h3>
-            <p>Branding médico sólido, contenido estratégico, estructura de conversión y experiencia digital consistente con servicios premium.</p>
-            <a class="cta" href="https://wa.me/524430000000?text=Quiero%20informaci%C3%B3n%20sobre%20injerto%20capilar%20FUE%20y%20tratamientos." target="_blank" rel="noopener noreferrer">Solicitar evaluación</a>
-          </aside>
-        </div>
-      </section>
-
-      <section id="doctor" class="section reveal" aria-labelledby="doctor-title">
-        <div class="container two-col">
-          <article>
-            <h2 id="doctor-title">Dirección médica y verificación profesional</h2>
-            <p>El Dr. Jorge Cambrón Barrales es Médico Cirujano con especialidad en Tricología. Su práctica integra ciencia, estética y ética clínica para resultados naturales.</p>
-            <p class="badge">Cédula Profesional 13107981</p>
-          </article>
-          <aside class="verify-box">
-            <h3>Perfiles verificados</h3>
-            <ul>
-              <li><a href="https://www.mend.com.mx/doctores/dr-jorge-cambron-barrales" target="_blank" rel="noopener noreferrer">Perfil profesional en Mend</a></li>
-              <li><a href="https://buholegal.com/13107981/" target="_blank" rel="noopener noreferrer">Cédula 13107981 (BúhoLegal)</a></li>
-              <li><a href="https://www.instagram.com/dr.jorgecambron/" target="_blank" rel="noopener noreferrer">Instagram oficial</a></li>
-              <li><a href="https://www.facebook.com/p/Dr-Jorge-Cambron-Tricologo-100083093782628/" target="_blank" rel="noopener noreferrer">Facebook oficial</a></li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
-      <section id="faq" class="section reveal" aria-labelledby="faq-title">
-        <div class="container">
-          <h2 id="faq-title">Preguntas frecuentes</h2>
-          <div class="faq-list">
-            <details><summary>¿La valoración inicial tiene diagnóstico real?</summary><p>Sí. Se realiza historia clínica y evaluación del cuero cabelludo para definir la mejor ruta terapéutica.</p></details>
-            <details><summary>¿Solo atienden injerto capilar?</summary><p>No. También se atienden casos médicos de caída, inflamación y alteraciones del cuero cabelludo.</p></details>
-            <details><summary>¿Puedo iniciar tratamiento sin cirugía?</summary><p>Sí. Dependiendo del caso, se puede iniciar con protocolos no quirúrgicos y reevaluar evolución.</p></details>
-          </div>
+          <form id="agenda-form" class="lp-form">
+            <div class="tc-field">
+              <label class="tc-field__label" for="agenda-nombre">Nombre</label>
+              <div class="tc-field__wrap">
+                <input id="agenda-nombre" name="nombre" type="text" class="tc-field__control" placeholder="Tu nombre" autocomplete="name" required />
+              </div>
+            </div>
+            <div class="tc-field">
+              <label class="tc-field__label" for="agenda-telefono">WhatsApp</label>
+              <div class="tc-field__wrap">
+                <input id="agenda-telefono" name="telefono" type="tel" class="tc-field__control" placeholder="(443) 000 0000" autocomplete="tel" required />
+              </div>
+            </div>
+            <label class="tc-check" for="agenda-consent">
+              <input id="agenda-consent" name="consent" type="checkbox" class="tc-check__input" required />
+              <span class="tc-check__box" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lp-icon" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <span class="tc-check__text">
+                <span class="tc-check__label">Acepto el aviso de privacidad</span>
+                <span class="tc-check__desc">Autorizo el uso de mis datos de contacto para agendar mi valoración.</span>
+              </span>
+            </label>
+            <button type="submit" class="tc-btn tc-btn--primary tc-btn--lg tc-btn--block"><span>Enviar y agendar</span></button>
+            <a class="lp-form-privacy" href="aviso-de-privacidad.html">Leer aviso de privacidad</a>
+            <noscript>
+              <p class="lp-form-privacy">Este formulario necesita JavaScript. Escríbenos directo por <a href="https://wa.me/524430000000?text=Hola%20Dr.%20Cambr%C3%B3n%2C%20quiero%20agendar%20mi%20valoraci%C3%B3n%20capilar.">WhatsApp</a>.</p>
+            </noscript>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer id="contacto" class="site-footer reveal">
-      <div class="container">
-        <h2>Ubicaciones</h2>
-        <div class="locations-grid">
-          <article class="location-card">
-            <h3>Victoria Medical Center, Morelia</h3>
-            <p>Av. Acueducto 2800, Lomas de Hidalgo, Morelia, Michoacán.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Victoria+Medical+Center+Av.+Acueducto+2800+Morelia" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
-          </article>
-          <article class="location-card">
-            <h3>Hospital Real San José, Guadalajara</h3>
-            <p>Sede alterna reportada en perfiles médicos del doctor.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Hospital+Real+San+Jose+Guadalajara" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
-          </article>
-        </div>
+    <!-- ===== Footer ===== -->
+    <footer class="lp-footer">
+      <div class="lp-footer-brand">
+        <svg width="26" height="26" viewBox="12 8 68 68" fill="none" aria-hidden="true">
+          <path d="M28 53c0-13 8-22 18-22s18 9 18 22c0 10-8 19-18 19s-18-9-18-19z" stroke="var(--navy)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M46 17c-8 3-11 11-11 11" stroke="var(--navy)" stroke-width="4.5" stroke-linecap="round"></path>
+          <path d="M57 20c-5 3-7 9-7 9" stroke="var(--navy)" stroke-width="4.5" stroke-linecap="round"></path>
+          <path d="M20 36h52" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"></path>
+        </svg>
+        <span>© <span id="lp-year">2026</span> Dr. Jorge Cambrón · Tricología · Morelia</span>
       </div>
-      <p class="copyright">© <span id="year"></span> Dr. Jorge Cambrón Barrales · Todos los derechos reservados.</p>
+      <div class="lp-footer-links">
+        <a href="aviso-de-privacidad.html">Aviso de privacidad</a>
+        <a href="https://www.instagram.com/dr.jorgecambron/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://wa.me/524430000000?text=Hola%20Dr.%20Cambr%C3%B3n%2C%20quiero%20agendar%20mi%20valoraci%C3%B3n%20capilar." data-wa-message="Hola Dr. Cambrón, quiero agendar mi valoración capilar." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
     </footer>
-
-    <div class="contact-bar" role="region" aria-label="Accesos rápidos de contacto">
-      <a class="contact-pill whatsapp" href="https://wa.me/524430000000?text=Hola%20Dr.%20Jorge%20Cambr%C3%B3n,%20quiero%20agendar%20mi%20valoraci%C3%B3n." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a class="contact-pill maps" href="https://www.google.com/maps/search/?api=1&query=Victoria+Medical+Center+Av.+Acueducto+2800+Morelia" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
-    </div>
-
-    <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
-
-      menuToggle?.addEventListener('click', () => {
-        const isOpen = menu.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', String(isOpen));
-      });
-
-      document.querySelectorAll('.menu a').forEach((link) => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('open');
-          menuToggle?.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('show');
-        });
-      }, { threshold: 0.12 });
-
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
