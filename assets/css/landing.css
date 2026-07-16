@@ -300,3 +300,85 @@ a:hover { color: var(--navy-hover); }
   .lp-nav { flex-wrap: wrap; }
   .tc-btn--lg { white-space: normal; text-align: center; }
 }
+
+/* =========================================================
+   MODO APP (solo móvil ≤768px, activado por JS con body.app-mode):
+   las secciones se agrupan en pantallas navegables desde una
+   barra inferior tipo app, con transiciones direccionales.
+   ========================================================= */
+.lp-appnav, .lp-appbar { display: none; }
+
+@media (max-width: 768px) {
+  body.app-mode { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+  body.app-mode .lp-nav { display: none; }
+  body.app-mode .app-screen-hidden { display: none !important; }
+  body.app-mode .lp-hero-wrap { min-height: calc(100svh - 64px - env(safe-area-inset-bottom, 0px)); }
+
+  /* espacio superior consistente al mostrar una pantalla interior */
+  body.app-mode:not(.app-on-inicio) { padding-top: calc(50px + env(safe-area-inset-top, 0px)); }
+  body.app-mode main > section.lp-section { padding-top: 22px; }
+
+  /* ---------- Barra superior (pantallas interiores) ---------- */
+  body.app-mode .lp-appbar {
+    display: flex; align-items: center; gap: 9px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+    padding: 12px 18px 11px; padding-top: calc(12px + env(safe-area-inset-top, 0px));
+    background: rgba(251, 250, 248, .92);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border: 0; border-bottom: 1.5px solid var(--line);
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transform: translateY(-110%);
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+  body.app-mode .lp-appbar--visible { transform: none; }
+  .lp-appbar-name { font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--ink); }
+
+  /* ---------- Barra de navegación inferior ---------- */
+  body.app-mode .lp-appnav {
+    display: flex; justify-content: space-around; align-items: stretch;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: rgba(255, 255, 255, .94);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-top: 1.5px solid var(--line);
+    padding: 5px max(8px, env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-right));
+    animation: lpAppnavUp .5s var(--ease-out) both;
+  }
+  .lp-appnav-tab {
+    appearance: none; background: none; border: 0; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 8px 10px 4px; position: relative; border-radius: 10px;
+    color: var(--ink-mute); font-family: var(--font-text);
+    -webkit-tap-highlight-color: transparent;
+    transition: color var(--dur-base) var(--ease-out);
+  }
+  .lp-appnav-tab::before {
+    content: ""; position: absolute; top: 0; left: 50%;
+    width: 22px; height: 3px; border-radius: 999px; background: var(--gold);
+    transform: translateX(-50%) scaleX(0);
+    transition: transform var(--dur-base) var(--ease-soft);
+  }
+  .lp-appnav-tab.active { color: var(--navy); }
+  .lp-appnav-tab.active::before { transform: translateX(-50%) scaleX(1); }
+  .lp-appnav-tab.active .lp-icon { animation: lpTabPop .32s var(--ease-soft); }
+  .lp-appnav-tab img { filter: grayscale(1) opacity(.45); transition: filter var(--dur-base) var(--ease-out); }
+  .lp-appnav-tab.active img { filter: none; animation: lpTabPop .32s var(--ease-soft); }
+  .lp-appnav-label { font-size: 10.5px; font-weight: 600; letter-spacing: .02em; }
+
+  /* ---------- Transiciones de pantalla ---------- */
+  body.app-mode .app-screen-enter { animation: lpScreenIn .38s var(--ease-out) both; }
+  body.app-mode .app-screen-enter-back { animation: lpScreenInBack .38s var(--ease-out) both; }
+}
+
+@keyframes lpAppnavUp { from { transform: translateY(110%); } to { transform: none; } }
+@keyframes lpTabPop { 0% { transform: scale(1); } 50% { transform: scale(1.22); } 100% { transform: scale(1); } }
+@keyframes lpScreenIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: none; } }
+@keyframes lpScreenInBack { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  body.app-mode .lp-appnav { animation: none; }
+  body.app-mode .app-screen-enter,
+  body.app-mode .app-screen-enter-back { animation: none; }
+  .lp-appnav-tab.active .lp-icon,
+  .lp-appnav-tab.active img { animation: none; }
+  body.app-mode .lp-appbar { transition: none; }
+}
