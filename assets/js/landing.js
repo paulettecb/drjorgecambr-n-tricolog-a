@@ -6,7 +6,7 @@
   'use strict';
 
   // Un solo lugar para el número de WhatsApp de la clínica.
-  const WHATSAPP = '524430000000';
+  const WHATSAPP = '524431390988';
 
   const waLink = (text) => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
 
