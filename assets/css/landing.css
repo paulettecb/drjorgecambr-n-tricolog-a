@@ -250,6 +250,8 @@ a:hover { color: var(--navy-hover); }
 .lp-doctor-copy .lp-h2{ margin:0; }
 .lp-doctor-copy p{ margin:0; font-family:var(--font-text); font-size:16.5px; line-height:1.65; color:var(--ink-soft); max-width:52ch; text-wrap:pretty; }
 .lp-chip-row{ display:flex; gap:10px; flex-wrap:wrap; }
+.lp-doctor-copy p.lp-doctor-verify{ margin:4px 0 0; font-size:13.5px; color:var(--ink-soft); }
+.lp-doctor-verify a{ color:var(--navy); }
 
 /* ---------- Testimonios ---------- */
 .lp-quotes{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:20px; }

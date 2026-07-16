@@ -1,0 +1,21 @@
+# Dr. Jorge Cambrón · Tricología y Restauración Capilar
+# Al mudar a dominio propio: actualizar la línea Sitemap (ver README).
+
+User-agent: *
+Allow: /
+Disallow: /assets/antes-y-despues/original-instagram/
+
+# Rastreadores de IA — bienvenidos (resumen del sitio en /llms.txt)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://paulettecb.github.io/drjorgecambr-n-tricolog-a/sitemap.xml
