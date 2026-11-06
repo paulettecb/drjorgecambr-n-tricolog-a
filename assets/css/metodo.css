@@ -1,21 +1,21 @@
 /* =========================================================
    MÉTODO · escena con scroll (design system Tricología Cambrón)
-   Fondo blanco papel con sombras de hojas en tinte marino, visual que cambia por paso
+   Fondo beige (arena) con sombras de hojas, visual que cambia por paso
    (cabello → tricoscopia → laboratorio → antes/después) y los
    textos de cada paso entrando en marino y dorado.
    El JS (assets/js/metodo-scroll.js) escribe --p (0–1) y las
    variables de cada capa; sin JS o con "reducir movimiento" se
    muestra como lista estática.
    ========================================================= */
-.lp-raiz { position: relative; height: 520vh; background: var(--paper); }
+.lp-raiz { position: relative; height: 520vh; background: var(--sand); }
 .lp-raiz__stage {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
   align-items: center; gap: clamp(24px, 4vw, 64px);
-  padding: 0 clamp(20px, 5vw, 80px); max-width: 1440px; margin: 0 auto;
+  padding: 0 max(clamp(20px, 5vw, 80px), calc((100% - 1440px) / 2));
 }
 .lp-raiz__bg, .lp-raiz__bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
-.lp-raiz__bg { z-index: 0; left: 50%; width: 100vw; transform: translateX(-50%); }
+.lp-raiz__bg { z-index: 0; }
 .lp-raiz__bg img { object-fit: cover; transform: scale(1.12) translate3d(var(--bgx, 0), var(--bgy, 0), 0); will-change: transform; }
 
 /* Intro (aparece primero, luego sube y se desvanece) */
