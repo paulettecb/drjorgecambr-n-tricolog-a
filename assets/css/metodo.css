@@ -40,6 +40,12 @@
 }
 .lp-raiz__v img { display: block; max-width: 100%; height: auto; }
 .lp-raiz__v--1 img { width: min(560px, 92%); filter: drop-shadow(0 30px 40px rgba(23, 39, 58, .18)); }
+.lp-raiz__duo { position: relative; width: min(560px, 94%); height: 100%; }
+.lp-raiz__device {
+  position: absolute; left: 0; top: 50%; width: 66%; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
+  transform: translate3d(var(--dev-x, 0), calc(-50% + var(--dev-y, 0px)), 0) rotate(var(--dev-r, 0deg));
+}
+.lp-raiz__duo .lp-raiz__scope { position: absolute; right: 0; top: 50%; width: 58%; transform: translateY(-38%); }
 .lp-raiz__scope {
   width: min(520px, 86%); aspect-ratio: 1; border-radius: 50%; overflow: hidden; position: relative;
   clip-path: circle(var(--scope, 0%) at 50% 50%);

@@ -47,7 +47,10 @@
         set(el, '--r', ((1 - inn) * -24 + t * 8).toFixed(1) + 'deg');
         set(el, '--s', (0.85 + 0.15 * inn + 0.12 * t - 0.2 * out).toFixed(3));
       } else if (i === 1) {
-        set(el, '--scope', (ease(seg(p, a - 0.02, a + 0.1)) * 71).toFixed(1) + '%');
+        set(el, '--scope', (ease(seg(p, a + 0.03, a + 0.13)) * 71).toFixed(1) + '%');
+        set(el, '--dev-x', ((1 - inn) * -8 - t * 2).toFixed(2) + 'vw');
+        set(el, '--dev-y', (t * -18).toFixed(1) + 'px');
+        set(el, '--dev-r', ((1 - inn) * -8 + t * 3).toFixed(1) + 'deg');
         set(el, '--scope-z', (1.45 - 0.35 * t).toFixed(3));
         set(el, '--s', (1 - 0.15 * out).toFixed(3));
       } else if (i === 2) {
