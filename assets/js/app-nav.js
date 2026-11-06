@@ -10,7 +10,7 @@
   var BP = window.matchMedia('(max-width: 768px)');
 
   var SCREENS = [
-    { id: 'inicio', els: ['.lp-hero-wrap'] },
+    { id: 'inicio', els: ['.lp-hero-wrap', '#jauiri'] },
     { id: 'metodo', els: ['#metodo', '#tratamientos'] },
     { id: 'resultados', els: ['#resultados', '#testimonios'] },
     { id: 'doctor', els: ['#doctor', '#ubicaciones'] },
@@ -19,6 +19,7 @@
 
   // sección (id de ancla) → pantalla que la contiene
   var SECTION_TO_SCREEN = {
+    jauiri: 'inicio',
     metodo: 'metodo',
     tratamientos: 'metodo',
     resultados: 'resultados',
