@@ -329,6 +329,19 @@ a:hover { color: var(--navy-hover); }
 .lp-nav-link--new{ display:inline-flex; align-items:center; gap:6px; color:var(--ink); }
 .lp-new{ font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--gold-deep); padding:3px 7px; border-radius:999px; background:var(--gold-tint); }
 
+/* ---------- Doctor: fotos en procedimiento ---------- */
+.lp-doctor-gallery{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+.lp-doctor-gallery figure{ margin:0; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/3; background:var(--sand); }
+.lp-doctor-gallery img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s var(--ease-out); }
+.lp-doctor-gallery figure:hover img{ transform:scale(1.04); }
+.lp-doctor-gallery__cap{ grid-column:1 / -1; margin:0; font-family:var(--font-text); font-size:13.5px; color:var(--ink-soft); }
+@media (max-width:600px){ .lp-doctor-gallery{ grid-template-columns:1fr; } }
+
+/* ---------- Ubicaciones: consultorio (placeholder) ---------- */
+.lp-consultorio{ margin:0 0 20px; border-radius:var(--radius-xl); overflow:hidden; aspect-ratio:21/8; }
+.lp-consultorio img{ width:100%; height:100%; object-fit:cover; display:block; }
+@media (max-width:760px){ .lp-consultorio{ aspect-ratio:4/3; } }
+
 /* ---------- Viewports muy angostos ----------
    El template original es de lienzo fijo; aquí evitamos el desbordamiento
    horizontal en <400px sin alterar el diseño en pantallas mayores.

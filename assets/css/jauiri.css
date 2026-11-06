@@ -185,7 +185,7 @@ a:hover { color: var(--navy-hover); }
 
 /* ---------- Fórmula ---------- */
 .jv-formula-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 40px; align-items: end; margin-bottom: 36px; }
-.jv-formula-jar { justify-self: end; width: min(260px, 100%); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+.jv-formula-jar { justify-self: end; width: min(240px, 100%); filter: drop-shadow(0 24px 30px rgba(23, 39, 58, .22)); }
 .jv-ingredients { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 16px; }
 .jv-ing {
   background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 24px;
@@ -237,7 +237,8 @@ a:hover { color: var(--navy-hover); }
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center;
   background: var(--navy); border-radius: 28px; padding: clamp(24px, 5vw, 64px); color: #fff;
 }
-.jv-buy-img { width: 100%; border-radius: var(--radius-lg); aspect-ratio: 5 / 6; object-fit: cover; }
+.jv-buy-media { display: grid; place-items: center; height: 100%; min-height: 320px; background: radial-gradient(closest-side, rgba(200, 147, 49, .28), rgba(200, 147, 49, 0) 75%); }
+.jv-buy-img { width: min(360px, 80%); height: auto; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .35)); }
 .jv-buy-copy {
   display: flex; flex-direction: column; gap: 16px;
   background: var(--paper); color: var(--ink); border-radius: 16px; padding: clamp(24px, 3vw, 36px);
@@ -251,7 +252,7 @@ a:hover { color: var(--navy-hover); }
 .jv-buy-list li { display: flex; gap: 10px; align-items: center; font-size: 15px; color: var(--ink); }
 .jv-buy-list svg { color: var(--navy); flex: none; }
 .jv-buy-note { margin: 0; font-size: 13px; color: var(--navy); text-align: center; }
-@media (max-width: 820px) { .jv-buy { grid-template-columns: 1fr; } .jv-buy-img { aspect-ratio: 4 / 3; } }
+@media (max-width: 820px) { .jv-buy { grid-template-columns: 1fr; } .jv-buy-media { min-height: 260px; } .jv-buy-img { width: min(240px, 60%); } }
 
 /* ---------- FAQ (= lp-faq) ---------- */
 .jv-faq-list { max-width: 840px; margin: 32px auto 0; }
@@ -294,7 +295,7 @@ a:hover { color: var(--navy-hover); }
   transform: translateY(110%); transition: transform var(--dur-slow) var(--ease-out);
 }
 .jv-sticky--on { transform: none; }
-.jv-sticky img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex: none; }
+.jv-sticky img { width: 44px; height: 44px; object-fit: contain; flex: none; }
 .jv-sticky-txt { flex: 1; min-width: 0; line-height: 1.25; }
 .jv-sticky-txt b { display: block; font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--ink); }
 .jv-sticky-txt span { display: block; font-size: 12px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
