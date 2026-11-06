@@ -1,0 +1,94 @@
+/* =========================================================
+   MÉTODO · escena con scroll (design system Tricología Cambrón)
+   Fondo crema con sombras de hojas, visual que cambia por paso
+   (cabello → tricoscopia → laboratorio → antes/después) y los
+   textos de cada paso entrando en marino y dorado.
+   El JS (assets/js/metodo-scroll.js) escribe --p (0–1) y las
+   variables de cada capa; sin JS o con "reducir movimiento" se
+   muestra como lista estática.
+   ========================================================= */
+.lp-raiz { position: relative; height: 520vh; background: var(--cream); }
+.lp-raiz__stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center; gap: clamp(24px, 4vw, 64px);
+  padding: 0 clamp(20px, 5vw, 80px); max-width: 1440px; margin: 0 auto;
+}
+.lp-raiz__bg, .lp-raiz__bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lp-raiz__bg { z-index: 0; left: 50%; width: 100vw; transform: translateX(-50%); }
+.lp-raiz__bg img { object-fit: cover; transform: scale(1.12) translate3d(var(--bgx, 0), var(--bgy, 0), 0); will-change: transform; }
+
+/* Intro (aparece primero, luego sube y se desvanece) */
+.lp-raiz__intro {
+  position: absolute; z-index: 2; left: 50%; top: 50%; width: min(760px, 90vw); text-align: center;
+  transform: translate(-50%, calc(-50% + var(--intro-y, 0px))); opacity: var(--intro-o, 1);
+}
+.lp-raiz__intro .lp-kicker { justify-content: center; }
+.lp-raiz__title {
+  margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; color: var(--ink);
+  font-size: clamp(40px, 6vw, 84px); line-height: 1.02; letter-spacing: -0.025em;
+}
+.lp-raiz__title .lp-hl { font-style: italic; color: var(--gold-deep); box-shadow: inset 0 -0.24em var(--gold-tint); }
+.lp-raiz__lead { margin: 0 auto; max-width: 52ch; font-size: clamp(16px, 1.4vw, 19px); line-height: 1.65; color: var(--ink-soft); text-wrap: pretty; }
+
+/* Visual */
+.lp-raiz__visual { position: relative; z-index: 1; height: min(72svh, 640px); }
+.lp-raiz__v {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  opacity: var(--o, 0); transform: translate3d(var(--x, 0), var(--y, 0), 0) scale(var(--s, 1)) rotate(var(--r, 0deg));
+  will-change: transform, opacity;
+}
+.lp-raiz__v img { display: block; max-width: 100%; height: auto; }
+.lp-raiz__v--1 img { width: min(560px, 92%); filter: drop-shadow(0 30px 40px rgba(23, 39, 58, .18)); }
+.lp-raiz__scope {
+  width: min(520px, 86%); aspect-ratio: 1; border-radius: 50%; overflow: hidden; position: relative;
+  clip-path: circle(var(--scope, 0%) at 50% 50%);
+  box-shadow: 0 0 0 10px var(--paper), 0 0 0 11px var(--line), var(--shadow-lg);
+}
+.lp-raiz__scope img { width: 100%; height: 100%; object-fit: cover; transform: scale(var(--scope-z, 1.4)); }
+.lp-raiz__v--3 img { width: min(560px, 94%); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
+.lp-raiz__ba { position: relative; width: min(420px, 82%); aspect-ratio: 3 / 4; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--sand); }
+.lp-raiz__ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lp-raiz__after { clip-path: inset(0 0 0 var(--wipe, 100%)); }
+.lp-raiz__ba-line { position: absolute; top: 0; bottom: 0; left: var(--wipe, 100%); width: 3px; margin-left: -1.5px; background: var(--gold); box-shadow: 0 0 0 4px rgba(200, 147, 49, .25); }
+.lp-raiz__tag-a { top: auto; bottom: 12px; left: 12px; }
+.lp-raiz__tag-b { top: auto; bottom: 12px; left: auto; right: 12px; opacity: var(--tag-b, 0); }
+
+/* Pasos */
+.lp-raiz__steps { position: relative; z-index: 2; list-style: none; margin: 0; padding: 0; height: 260px; }
+.lp-raiz__step {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 12px;
+  opacity: 0; transform: translateY(26px); filter: blur(6px);
+  transition: opacity .55s ease, transform .75s cubic-bezier(.22,1,.36,1), filter .55s ease;
+}
+.lp-raiz__step.is-on { opacity: 1; transform: none; filter: none; }
+.lp-raiz__step .lp-card-num { font-size: 15px; letter-spacing: .14em; }
+.lp-raiz__step h3 { margin: 0; font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(30px, 3.6vw, 52px); line-height: 1.05; letter-spacing: -0.02em; }
+.lp-raiz__step p { margin: 0; font-size: clamp(16px, 1.35vw, 19px); line-height: 1.6; color: var(--ink-soft); max-width: 40ch; }
+
+.lp-raiz__dots { position: absolute; z-index: 2; right: clamp(16px, 2.4vw, 36px); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; opacity: var(--dots-o, 0); }
+.lp-raiz__dots span { width: 6px; height: 22px; border-radius: 6px; background: var(--line-strong); transition: background .3s ease, height .3s ease; }
+.lp-raiz__dots span.is-on { background: var(--navy); height: 34px; }
+
+/* Celular: visual arriba, texto abajo */
+@media (max-width: 760px) {
+  .lp-raiz { height: 480vh; }
+  .lp-raiz__stage { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1.15fr) auto; align-content: center; gap: 8px; padding: 24px 20px; }
+  .lp-raiz__visual { height: 50svh; }
+  .lp-raiz__steps { height: 190px; }
+  .lp-raiz__step { justify-content: flex-start; text-align: center; align-items: center; }
+  .lp-raiz__dots { right: 50%; top: auto; bottom: 14px; transform: translateX(50%); flex-direction: row; }
+  .lp-raiz__dots span { width: 22px; height: 5px; } .lp-raiz__dots span.is-on { width: 34px; height: 5px; }
+  body.app-mode .lp-raiz__stage { top: 50px; height: calc(100svh - 114px - env(safe-area-inset-bottom, 0px)); }
+  body.app-mode main > section.lp-raiz { padding-top: 0; }
+}
+
+/* Sin movimiento: lista estática legible */
+.lp-raiz--static { height: auto; }
+.lp-raiz--static .lp-raiz__stage { position: relative; height: auto; display: block; padding: clamp(56px, 9vh, 96px) clamp(20px, 4vw, 40px); }
+.lp-raiz--static .lp-raiz__intro { position: relative; left: auto; top: auto; transform: none; margin: 0 auto 32px; }
+.lp-raiz--static .lp-raiz__visual { display: none; }
+.lp-raiz--static .lp-raiz__steps { height: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.lp-raiz--static .lp-raiz__step { position: relative; opacity: 1; transform: none; filter: none; background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 24px; }
+.lp-raiz--static .lp-raiz__step h3 { font-size: 20px; }
+.lp-raiz--static .lp-raiz__dots { display: none; }

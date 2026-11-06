@@ -11,6 +11,7 @@ Diseño basado en el proyecto de Claude Design
 
 - `index.html` — landing principal (hero con canvas animado, método, tratamientos, resultados, doctor, ubicaciones, testimonios, FAQ, agenda).
 - `jauiri.html` — página de producto de **Jauiri** (marca DFH JOVIX), construida con el mismo design system del sitio (`assets/css/tokens.css` + `assets/css/jauiri.css`, `assets/js/jauiri.js`, imágenes en `assets/jovix/`). En la landing aparece destacado justo después del hero (`#jauiri`).
+- **Método (`#metodo`)** — escena con scroll: el cabello con su raíz, la tricoscopia que se abre como lente, los laboratorios y una cortina de antes/después (`assets/css/metodo.css`, `assets/js/metodo-scroll.js`, imágenes en `assets/metodo/`). Con "reducir movimiento" se muestra como lista.
 - `aviso-de-privacidad.html` — aviso LFPDPPP (enlazado desde el formulario).
 - `assets/css/` — tokens del design system + estilos de la landing.
 - `assets/js/` — animación del hero (canvas) + interacciones (formulario → WhatsApp).
