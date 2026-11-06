@@ -1,7 +1,7 @@
 /* =========================================================
    JAUIRI · DFH JOVIX — página de producto
-   Identidad de la etiqueta: negro profundo, magenta, violeta
-   y el brillo azul de la línea de luz del logo.
+   Identidad: negro profundo, plata y el brillo azul de la
+   línea de luz del logo (sin morados).
    Display: Bodoni Moda (como el logotipo) · Texto: Montserrat
    (como "Design for Health").
    ========================================================= */
@@ -12,11 +12,9 @@
   --jv-line:     rgba(255, 255, 255, .10);
   --jv-line-2:   rgba(255, 255, 255, .18);
 
-  --jv-magenta:  #C2409F;
-  --jv-violet:   #8458E0;
   --jv-blue:     #5BB2EE;
-  --jv-lilac:    #E6D9F2;
-  --jv-grad:     linear-gradient(90deg, #C2409F 0%, #8458E0 50%, #5BB2EE 100%);
+  --jv-silver:   #D7DEE6;
+  --jv-grad:     linear-gradient(90deg, #F4F6F8 0%, #AFBCC8 55%, #5BB2EE 100%);
 
   --jv-text:     #F5F2F8;
   --jv-soft:     #BDB5CB;   /* 9.5:1 sobre --jv-black */
@@ -45,7 +43,7 @@ body {
   overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; display: block; }
-a { color: var(--jv-lilac); }
+a { color: var(--jv-silver); }
 
 .jv-wrap { max-width: var(--jv-max); margin: 0 auto; padding: 0 var(--jv-gutter); }
 
@@ -61,11 +59,11 @@ a { color: var(--jv-lilac); }
 .jv-btn:focus-visible { outline: 3px solid var(--jv-blue); outline-offset: 3px; }
 .jv-btn:active { transform: translateY(1px); }
 .jv-btn--primary {
-  color: #fff;
-  background: linear-gradient(100deg, #B2368F 0%, #7A4BD6 60%, #4E9DDB 100%);
-  box-shadow: 0 10px 30px -8px rgba(132, 88, 224, .6);
+  color: var(--jv-black);
+  background: linear-gradient(180deg, #FFFFFF 0%, #DCE1E6 100%);
+  box-shadow: 0 10px 30px -8px rgba(91, 178, 238, 0.42);
 }
-.jv-btn--primary:hover { color: #fff; box-shadow: 0 14px 38px -8px rgba(132, 88, 224, .85); transform: translateY(-1px); }
+.jv-btn--primary:hover { color: var(--jv-black); box-shadow: 0 14px 38px -8px rgba(91, 178, 238, 0.59); transform: translateY(-1px); }
 .jv-btn--ghost { color: var(--jv-text); border-color: var(--jv-line-2); background: rgba(255,255,255,.03); }
 .jv-btn--ghost:hover { color: var(--jv-text); border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.07); }
 .jv-btn--lg { min-height: 58px; font-size: 16.5px; padding: 16px 32px; }
@@ -97,7 +95,7 @@ a { color: var(--jv-lilac); }
 /* ---------- Eyebrow + títulos ---------- */
 .jv-eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
-  font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--jv-lilac);
+  font-size: 12px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--jv-silver);
 }
 .jv-eyebrow::before { content: ""; width: 30px; height: 2px; border-radius: 2px; background: var(--jv-grad); }
 .jv-h2 {
@@ -121,9 +119,9 @@ a { color: var(--jv-lilac); }
   position: relative; overflow: hidden;
   padding: clamp(40px, 8vh, 88px) 0 clamp(64px, 10vh, 112px);
   background:
-    radial-gradient(60% 55% at 78% 35%, rgba(132, 88, 224, .30) 0%, rgba(132, 88, 224, 0) 70%),
+    radial-gradient(60% 55% at 78% 35%, rgba(91, 178, 238, 0.21) 0%, rgba(91, 178, 238, 0) 70%),
     radial-gradient(45% 45% at 95% 85%, rgba(91, 178, 238, .18) 0%, rgba(91, 178, 238, 0) 70%),
-    radial-gradient(40% 50% at 10% 10%, rgba(194, 64, 159, .18) 0%, rgba(194, 64, 159, 0) 70%),
+    radial-gradient(40% 50% at 10% 10%, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 70%),
     var(--jv-black);
 }
 .jv-hero-grid {
@@ -133,13 +131,13 @@ a { color: var(--jv-lilac); }
 .jv-hero-copy { display: flex; flex-direction: column; gap: 22px; }
 .jv-hero-brand { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: .18em; color: var(--jv-soft); }
 .jv-badge {
-  font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; color: var(--jv-black);
   padding: 5px 11px; border-radius: 999px; background: var(--jv-grad);
 }
 .jv-hero-title {
   margin: 0; font-family: var(--jv-display); font-weight: 500;
   font-size: clamp(64px, 10vw, 132px); line-height: .92; letter-spacing: .02em;
-  background: linear-gradient(180deg, #FFFFFF 0%, #E9E2F3 45%, #B9A9D6 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #E6EAEE 45%, #A7B1BC 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .jv-hero-light { width: min(420px, 92%); height: auto; margin: -4px 0 2px; }
@@ -196,7 +194,7 @@ a { color: var(--jv-lilac); }
 .jv-strip-item + .jv-strip-item { border-left: 1px solid var(--jv-line); }
 .jv-strip-ic {
   flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-  background: rgba(132, 88, 224, .14); color: var(--jv-lilac); border: 1px solid rgba(132, 88, 224, .35);
+  background: rgba(91, 178, 238, 0.1); color: var(--jv-silver); border: 1px solid rgba(91, 178, 238, 0.24);
 }
 .jv-strip-item div b { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.3; }
 .jv-strip-item div span { display: block; font-size: 12.5px; color: var(--jv-soft); line-height: 1.4; }
@@ -225,7 +223,7 @@ a { color: var(--jv-lilac); }
 
 /* ---------- Fórmula ---------- */
 .jv-formula-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 40px; align-items: end; margin-bottom: 44px; }
-.jv-formula-jar { justify-self: end; width: min(260px, 100%); border-radius: 24px; border: 1px solid var(--jv-line-2); box-shadow: 0 30px 60px -30px rgba(132, 88, 224, .6); }
+.jv-formula-jar { justify-self: end; width: min(260px, 100%); border-radius: 24px; border: 1px solid var(--jv-line-2); box-shadow: 0 30px 60px -30px rgba(91, 178, 238, 0.42); }
 .jv-ingredients { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 14px; }
 .jv-ing {
   position: relative; overflow: hidden;
@@ -241,7 +239,7 @@ a { color: var(--jv-lilac); }
 .jv-ing-dose { flex: none; font-size: 13px; font-weight: 600; color: var(--jv-blue); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .jv-ing-kind { font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--jv-mute); }
 .jv-ing p { margin: 0; font-size: 14.5px; color: var(--jv-soft); line-height: 1.6; }
-.jv-ing--star { background: linear-gradient(160deg, rgba(194, 64, 159, .16), rgba(132, 88, 224, .10) 50%, rgba(91, 178, 238, .08)), var(--jv-surface); border-color: rgba(132, 88, 224, .35); }
+.jv-ing--star { background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(91, 178, 238, 0.07) 50%, rgba(91, 178, 238, .08)), var(--jv-surface); border-color: rgba(91, 178, 238, 0.24); }
 .jv-formula-note { margin: 22px 0 0; font-size: 13px; color: var(--jv-mute); }
 @media (max-width: 760px) {
   .jv-formula-head { grid-template-columns: 1fr; }
@@ -251,7 +249,7 @@ a { color: var(--jv-lilac); }
 /* ---------- Doctor ---------- */
 .jv-doc {
   display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center;
-  background: linear-gradient(135deg, rgba(132, 88, 224, .12), rgba(91, 178, 238, .06)), var(--jv-surface);
+  background: linear-gradient(135deg, rgba(91, 178, 238, 0.08), rgba(91, 178, 238, .06)), var(--jv-surface);
   border: 1px solid var(--jv-line-2); border-radius: 32px; padding: clamp(28px, 5vw, 64px);
 }
 .jv-doc-photo { border-radius: 200px 200px 22px 22px; overflow: hidden; aspect-ratio: 4 / 5; max-width: 360px; width: 100%; margin: 0 auto; }
@@ -267,7 +265,7 @@ a { color: var(--jv-lilac); }
 .jv-step { background: var(--jv-surface); border: 1px solid var(--jv-line); border-radius: 22px; padding: 28px 24px; text-align: left; }
 .jv-step-num {
   display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
-  font-family: var(--jv-display); font-size: 20px; color: #fff; background: var(--jv-grad); margin-bottom: 18px;
+  font-family: var(--jv-display); font-size: 20px; color: var(--jv-black); background: var(--jv-grad); margin-bottom: 18px;
 }
 .jv-step h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
 .jv-step p { margin: 0; font-size: 14.5px; color: var(--jv-soft); }
@@ -276,7 +274,7 @@ a { color: var(--jv-lilac); }
 /* ---------- Para quién ---------- */
 .jv-for { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px; margin-top: 40px; }
 .jv-for-item { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: 18px; border: 1px solid var(--jv-line); background: rgba(255,255,255,.02); }
-.jv-for-item svg { flex: none; color: var(--jv-magenta); margin-top: 2px; }
+.jv-for-item svg { flex: none; color: var(--jv-blue); margin-top: 2px; }
 .jv-for-item p { margin: 0; font-size: 15px; color: var(--jv-text); line-height: 1.5; }
 
 /* ---------- Compra ---------- */
@@ -284,8 +282,8 @@ a { color: var(--jv-lilac); }
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center;
   border-radius: 36px; padding: clamp(24px, 5vw, 64px);
   background:
-    radial-gradient(70% 80% at 100% 0%, rgba(132, 88, 224, .35), rgba(132, 88, 224, 0) 70%),
-    radial-gradient(60% 70% at 0% 100%, rgba(194, 64, 159, .25), rgba(194, 64, 159, 0) 70%),
+    radial-gradient(70% 80% at 100% 0%, rgba(91, 178, 238, 0.24), rgba(91, 178, 238, 0) 70%),
+    radial-gradient(60% 70% at 0% 100%, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0) 70%),
     var(--jv-surface);
   border: 1px solid var(--jv-line-2);
 }
@@ -311,7 +309,7 @@ a { color: var(--jv-lilac); }
   font-size: 16.5px; font-weight: 600;
 }
 .jv-faq summary::-webkit-details-marker { display: none; }
-.jv-faq summary::after { content: "+"; font-size: 24px; font-weight: 400; color: var(--jv-lilac); transition: transform .3s var(--jv-ease); }
+.jv-faq summary::after { content: "+"; font-size: 24px; font-weight: 400; color: var(--jv-silver); transition: transform .3s var(--jv-ease); }
 .jv-faq[open] summary::after { transform: rotate(45deg); }
 .jv-faq p { margin: 0 4px 22px; color: var(--jv-soft); font-size: 15.5px; }
 
