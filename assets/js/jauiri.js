@@ -27,8 +27,11 @@
 
   var pastHero = false;
   var atBuy = false;
+  var atScene = false;
+  var scene = document.getElementById('jvx-escena');
+  if (scene) new IntersectionObserver(function (e) { atScene = e[0].isIntersecting; update(); }).observe(scene);
   function update() {
-    var on = pastHero && !atBuy;
+    var on = pastHero && !atBuy && !atScene;
     bar.classList.toggle('jv-sticky--on', on);
     bar.setAttribute('aria-hidden', on ? 'false' : 'true');
     var link = bar.querySelector('a');
